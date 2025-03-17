@@ -1,0 +1,19 @@
+
+State Machine - |projeto_top_level|unidade_controle:UC|Eatual
+Name Eatual.fim_timeout Eatual.fim_errou Eatual.avancaSeq Eatual.proximaSeq Eatual.proximo Eatual.fim_acertou Eatual.comparacao Eatual.registra Eatual.espera Eatual.preparaRodada Eatual.proximoLeds Eatual.mostraDado Eatual.carregaDado Eatual.preparaSeq Eatual.preparacao Eatual.inicial 
+Eatual.inicial 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Eatual.preparacao 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+Eatual.preparaSeq 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+Eatual.carregaDado 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+Eatual.mostraDado 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+Eatual.proximoLeds 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+Eatual.preparaRodada 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+Eatual.espera 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+Eatual.registra 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+Eatual.comparacao 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+Eatual.fim_acertou 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+Eatual.proximo 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+Eatual.proximaSeq 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+Eatual.avancaSeq 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Eatual.fim_errou 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Eatual.fim_timeout 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

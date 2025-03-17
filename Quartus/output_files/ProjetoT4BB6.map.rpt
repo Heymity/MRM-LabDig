@@ -1,0 +1,915 @@
+Analysis & Synthesis report for ProjetoT4BB6
+Mon Mar 17 00:23:09 2025
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |projeto_top_level|unidade_controle:UC|Eatual
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: fluxo_dados:FD|mux2x1_n:seletorMemoria
+ 14. Parameter Settings for User Entity Instance: fluxo_dados:FD|contador_m:contadorS
+ 15. Parameter Settings for User Entity Instance: fluxo_dados:FD|contador_m:timer_leds
+ 16. Parameter Settings for User Entity Instance: fluxo_dados:FD|contador_m:cont_timeout
+ 17. Parameter Settings for User Entity Instance: fluxo_dados:FD|matrix_controller:display_controller|contador_m:col_selector
+ 18. Port Connectivity Checks: "fluxo_dados:FD|matrix_controller:display_controller|contador_m:col_selector"
+ 19. Port Connectivity Checks: "fluxo_dados:FD|matrix_controller:display_controller"
+ 20. Port Connectivity Checks: "fluxo_dados:FD|contador_m:cont_timeout"
+ 21. Port Connectivity Checks: "fluxo_dados:FD|contador_m:timer_leds"
+ 22. Port Connectivity Checks: "fluxo_dados:FD|comparador_85:comparadorS"
+ 23. Port Connectivity Checks: "fluxo_dados:FD|registrador_4:registradorDificuldade"
+ 24. Port Connectivity Checks: "fluxo_dados:FD|contador_m:contadorS"
+ 25. Port Connectivity Checks: "fluxo_dados:FD|registrador_4:registradorMemoria"
+ 26. Port Connectivity Checks: "fluxo_dados:FD|comparador_85:comparadorJ"
+ 27. Port Connectivity Checks: "fluxo_dados:FD|contador_163:contadorJ"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Mar 17 00:23:09 2025       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; ProjetoT4BB6                                ;
+; Top-level Entity Name           ; projeto_top_level                           ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 64                                          ;
+; Total pins                      ; 92                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; projeto_top_level  ; ProjetoT4BB6       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; unidade_controle.v               ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/unidade_controle.v  ;         ;
+; rom_16x4.v                       ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/rom_16x4.v          ;         ;
+; rom16x4_v2.v                     ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/rom16x4_v2.v        ;         ;
+; registrador_4.v                  ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/registrador_4.v     ;         ;
+; projeto_top_level.v              ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v ;         ;
+; mux2x1_n.v                       ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/mux2x1_n.v          ;         ;
+; mux2x1.v                         ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/mux2x1.v            ;         ;
+; hexa7seg.v                       ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/hexa7seg.v          ;         ;
+; fluxo_dados.v                    ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v       ;         ;
+; edge_detector.v                  ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/edge_detector.v     ;         ;
+; contador_m.v                     ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/contador_m.v        ;         ;
+; contador_163.v                   ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/contador_163.v      ;         ;
+; comparador_85.v                  ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/comparador_85.v     ;         ;
+; matrix_controller.v              ; yes             ; User Verilog HDL File  ; D:/Coding/Verilog/LabDig/Projeto/Quartus/matrix_controller.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 77          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 133         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 19          ;
+;     -- 5 input functions                    ; 11          ;
+;     -- 4 input functions                    ; 50          ;
+;     -- <=3 input functions                  ; 53          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 64          ;
+;                                             ;             ;
+; I/O pins                                    ; 92          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 62          ;
+; Total fan-out                               ; 887         ;
+; Average fan-out                             ; 2.33        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                       ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                            ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |projeto_top_level                           ; 133 (2)             ; 64 (0)                    ; 0                 ; 0          ; 92   ; 0            ; |projeto_top_level                                                                             ; projeto_top_level ; work         ;
+;    |fluxo_dados:FD|                          ; 68 (2)              ; 48 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD                                                              ; fluxo_dados       ; work         ;
+;       |comparador_85:comparadorJ|            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|comparador_85:comparadorJ                                    ; comparador_85     ; work         ;
+;       |comparador_85:comparadorS|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|comparador_85:comparadorS                                    ; comparador_85     ; work         ;
+;       |contador_163:contadorJ|               ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|contador_163:contadorJ                                       ; contador_163      ; work         ;
+;       |contador_m:cont_timeout|              ; 16 (16)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|contador_m:cont_timeout                                      ; contador_m        ; work         ;
+;       |contador_m:contadorS|                 ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|contador_m:contadorS                                         ; contador_m        ; work         ;
+;       |contador_m:timer_leds|                ; 16 (16)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|contador_m:timer_leds                                        ; contador_m        ; work         ;
+;       |edge_detector:detector|               ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|edge_detector:detector                                       ; edge_detector     ; work         ;
+;       |matrix_controller:display_controller| ; 11 (8)              ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|matrix_controller:display_controller                         ; matrix_controller ; work         ;
+;          |contador_m:col_selector|           ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|matrix_controller:display_controller|contador_m:col_selector ; contador_m        ; work         ;
+;       |mux2x1:mux|                           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|mux2x1:mux                                                   ; mux2x1            ; work         ;
+;       |mux2x1_n:seletorMemoria|              ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|mux2x1_n:seletorMemoria                                      ; mux2x1_n          ; work         ;
+;       |registrador_4:registradorDificuldade| ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|registrador_4:registradorDificuldade                         ; registrador_4     ; work         ;
+;       |registrador_4:registradorJ|           ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|registrador_4:registradorJ                                   ; registrador_4     ; work         ;
+;       |registrador_4:registradorLeds|        ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|registrador_4:registradorLeds                                ; registrador_4     ; work         ;
+;       |registrador_4:registradorMemoria|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|fluxo_dados:FD|registrador_4:registradorMemoria                             ; registrador_4     ; work         ;
+;    |hexa7seg:display_contagem|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|hexa7seg:display_contagem                                                   ; hexa7seg          ; work         ;
+;    |hexa7seg:display_estado|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|hexa7seg:display_estado                                                     ; hexa7seg          ; work         ;
+;    |hexa7seg:display_jogada|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|hexa7seg:display_jogada                                                     ; hexa7seg          ; work         ;
+;    |hexa7seg:display_memoria|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|hexa7seg:display_memoria                                                    ; hexa7seg          ; work         ;
+;    |hexa7seg:display_seqCont|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|hexa7seg:display_seqCont                                                    ; hexa7seg          ; work         ;
+;    |unidade_controle:UC|                     ; 28 (28)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |projeto_top_level|unidade_controle:UC                                                         ; unidade_controle  ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |projeto_top_level|unidade_controle:UC|Eatual                                                                                                                                                                                                                                                                                 ;
++----------------------+--------------------+------------------+------------------+-------------------+----------------+--------------------+-------------------+-----------------+---------------+----------------------+--------------------+-------------------+--------------------+-------------------+-------------------+----------------+
+; Name                 ; Eatual.fim_timeout ; Eatual.fim_errou ; Eatual.avancaSeq ; Eatual.proximaSeq ; Eatual.proximo ; Eatual.fim_acertou ; Eatual.comparacao ; Eatual.registra ; Eatual.espera ; Eatual.preparaRodada ; Eatual.proximoLeds ; Eatual.mostraDado ; Eatual.carregaDado ; Eatual.preparaSeq ; Eatual.preparacao ; Eatual.inicial ;
++----------------------+--------------------+------------------+------------------+-------------------+----------------+--------------------+-------------------+-----------------+---------------+----------------------+--------------------+-------------------+--------------------+-------------------+-------------------+----------------+
+; Eatual.inicial       ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 0              ;
+; Eatual.preparacao    ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 1                 ; 1              ;
+; Eatual.preparaSeq    ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 1                 ; 0                 ; 1              ;
+; Eatual.carregaDado   ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 1                  ; 0                 ; 0                 ; 1              ;
+; Eatual.mostraDado    ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 1                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.proximoLeds   ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 1                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.preparaRodada ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 1                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.espera        ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 1             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.registra      ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 1               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.comparacao    ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 1                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.fim_acertou   ; 0                  ; 0                ; 0                ; 0                 ; 0              ; 1                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.proximo       ; 0                  ; 0                ; 0                ; 0                 ; 1              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.proximaSeq    ; 0                  ; 0                ; 0                ; 1                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.avancaSeq     ; 0                  ; 0                ; 1                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.fim_errou     ; 0                  ; 1                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
+; Eatual.fim_timeout   ; 1                  ; 0                ; 0                ; 0                 ; 0              ; 0                  ; 0                 ; 0               ; 0             ; 0                    ; 0                  ; 0                 ; 0                  ; 0                 ; 0                 ; 1              ;
++----------------------+--------------------+------------------+------------------+-------------------+----------------+--------------------+-------------------+-----------------+---------------+----------------------+--------------------+-------------------+--------------------+-------------------+-------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                    ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal                                                                      ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][1][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][1][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][1][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][1][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][0]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][0]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][0]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][0]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][1]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][1]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][1]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][1]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][2]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][2]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][2]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][2]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][3]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][3]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][3]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][3]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][4]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][4]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][4]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][4]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][5]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][5]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][5]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][5]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][6]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][6]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][6]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][6]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][7]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][7]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][7]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][7]           ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][0] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][1] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][2] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][3] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][4] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][5] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][6] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][1][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[3][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][1][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[4][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][1][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][2][7] ; Merged with fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[7][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[6][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[1][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[0][0][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][0] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][1] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][2] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][3] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][4] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][5] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][6] ; Stuck at VCC due to stuck port data_in                                                  ;
+; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][1][7] ; Stuck at VCC due to stuck port data_in                                                  ;
+; unidade_controle:UC|Eatual~4                                                ; Lost fanout                                                                             ;
+; unidade_controle:UC|Eatual~5                                                ; Lost fanout                                                                             ;
+; unidade_controle:UC|Eatual~6                                                ; Lost fanout                                                                             ;
+; unidade_controle:UC|Eatual~7                                                ; Lost fanout                                                                             ;
+; Total Number of Removed Registers = 228                                     ;                                                                                         ;
++-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                  ;
++-------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name                                                     ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++-------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][0] ; Stuck at VCC              ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][0], ;
+;                                                                   ; due to stuck port data_in ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][1],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][1], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][2],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][2], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][3],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][3], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][4],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][4], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][5],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][5], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][6],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][6], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[0][7],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[2][0][7]  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][0] ; Stuck at VCC              ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][0], ;
+;                                                                   ; due to stuck port data_in ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][1],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][1], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][2],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][2], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][3],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][3], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][4],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][4], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][5],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][5], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][6],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][6], ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[3][7],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|display_buffer[5][0][7]  ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][0] ; Stuck at VCC              ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][1],           ;
+;                                                                   ; due to stuck port data_in ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][2],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][3],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][4],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][5],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][6],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[1][7]            ;
+; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][0] ; Stuck at VCC              ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][1],           ;
+;                                                                   ; due to stuck port data_in ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][2],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][3],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][4],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][5],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][6],           ;
+;                                                                   ;                           ; fluxo_dados:FD|matrix_controller:display_controller|jogadas[2][7]            ;
++-------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 60    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |projeto_top_level|fluxo_dados:FD|contador_163:contadorJ|Q[2] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |projeto_top_level|unidade_controle:UC|Eprox.proximo          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |projeto_top_level|unidade_controle:UC|Eprox.proximoLeds      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|mux2x1_n:seletorMemoria ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; BITS           ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|contador_m:contadorS ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; M              ; 16    ; Signed Integer                                          ;
+; N              ; 4     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|contador_m:timer_leds ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; M              ; 1000  ; Signed Integer                                           ;
+; N              ; 12    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|contador_m:cont_timeout ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; M              ; 5000  ; Signed Integer                                             ;
+; N              ; 13    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxo_dados:FD|matrix_controller:display_controller|contador_m:col_selector ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; M              ; 8     ; Signed Integer                                                                                  ;
+; N              ; 3     ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|matrix_controller:display_controller|contador_m:col_selector" ;
++--------+--------+----------+----------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                    ;
++--------+--------+----------+----------------------------------------------------------------------------+
+; zera_s ; Input  ; Info     ; Stuck at GND                                                               ;
+; fim    ; Output ; Info     ; Explicitly unconnected                                                     ;
+; meio   ; Output ; Info     ; Explicitly unconnected                                                     ;
++--------+--------+----------+----------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|matrix_controller:display_controller" ;
++-------------------+-------+----------+------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                  ;
++-------------------+-------+----------+------------------------------------------+
+; desce_jogada      ; Input ; Info     ; Stuck at VCC                             ;
+; pontos            ; Input ; Info     ; Stuck at GND                             ;
+; linhas_bloqueadas ; Input ; Info     ; Stuck at GND                             ;
+; prox_jogada       ; Input ; Info     ; Stuck at GND                             ;
++-------------------+-------+----------+------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|contador_m:cont_timeout" ;
++--------+--------+----------+---------------------------------------+
+; Port   ; Type   ; Severity ; Details                               ;
++--------+--------+----------+---------------------------------------+
+; zera_s ; Input  ; Info     ; Stuck at GND                          ;
+; Q      ; Output ; Info     ; Explicitly unconnected                ;
+; meio   ; Output ; Info     ; Explicitly unconnected                ;
++--------+--------+----------+---------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|contador_m:timer_leds" ;
++--------+--------+----------+-------------------------------------+
+; Port   ; Type   ; Severity ; Details                             ;
++--------+--------+----------+-------------------------------------+
+; zera_s ; Input  ; Info     ; Stuck at GND                        ;
+; Q      ; Output ; Info     ; Explicitly unconnected              ;
++--------+--------+----------+-------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|comparador_85:comparadorS" ;
++------+--------+----------+-------------------------------------------+
+; Port ; Type   ; Severity ; Details                                   ;
++------+--------+----------+-------------------------------------------+
+; ALBi ; Input  ; Info     ; Stuck at GND                              ;
+; AGBi ; Input  ; Info     ; Stuck at GND                              ;
+; AEBi ; Input  ; Info     ; Stuck at VCC                              ;
+; ALBo ; Output ; Info     ; Explicitly unconnected                    ;
+; AGBo ; Output ; Info     ; Explicitly unconnected                    ;
++------+--------+----------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|registrador_4:registradorDificuldade"                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; D[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Q[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|contador_m:contadorS" ;
++--------+-------+----------+-------------------------------------+
+; Port   ; Type  ; Severity ; Details                             ;
++--------+-------+----------+-------------------------------------+
+; zera_s ; Input ; Info     ; Stuck at GND                        ;
++--------+-------+----------+-------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|registrador_4:registradorMemoria"                                       ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; D[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Q[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|comparador_85:comparadorJ" ;
++------+--------+----------+-------------------------------------------+
+; Port ; Type   ; Severity ; Details                                   ;
++------+--------+----------+-------------------------------------------+
+; ALBi ; Input  ; Info     ; Stuck at GND                              ;
+; AGBi ; Input  ; Info     ; Stuck at GND                              ;
+; AEBi ; Input  ; Info     ; Stuck at VCC                              ;
+; ALBo ; Output ; Info     ; Explicitly unconnected                    ;
+; AGBo ; Output ; Info     ; Explicitly unconnected                    ;
++------+--------+----------+-------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "fluxo_dados:FD|contador_163:contadorJ" ;
++------+--------+----------+----------------------------------------+
+; Port ; Type   ; Severity ; Details                                ;
++------+--------+----------+----------------------------------------+
+; ld   ; Input  ; Info     ; Stuck at VCC                           ;
+; ent  ; Input  ; Info     ; Stuck at VCC                           ;
+; D    ; Input  ; Info     ; Stuck at GND                           ;
+; rco  ; Output ; Info     ; Explicitly unconnected                 ;
++------+--------+----------+----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 64                          ;
+;     CLR               ; 25                          ;
+;     ENA               ; 4                           ;
+;     ENA CLR           ; 10                          ;
+;     ENA CLR SCLR      ; 25                          ;
+; arriav_lcell_comb     ; 143                         ;
+;     arith             ; 25                          ;
+;         1 data inputs ; 25                          ;
+;     normal            ; 118                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 50                          ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 19                          ;
+; boundary_port         ; 92                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.07                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Mar 17 00:23:00 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoT4BB6 -c ProjetoT4BB6
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file unidade_controle.v
+    Info (12023): Found entity 1: unidade_controle File: D:/Coding/Verilog/LabDig/Projeto/Quartus/unidade_controle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rom_16x4.v
+    Info (12023): Found entity 1: rom_16x4 File: D:/Coding/Verilog/LabDig/Projeto/Quartus/rom_16x4.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file rom16x4_v2.v
+    Info (12023): Found entity 1: rom_16x4_v2 File: D:/Coding/Verilog/LabDig/Projeto/Quartus/rom16x4_v2.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file registrador_4.v
+    Info (12023): Found entity 1: registrador_4 File: D:/Coding/Verilog/LabDig/Projeto/Quartus/registrador_4.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file projeto_top_level.v
+    Info (12023): Found entity 1: projeto_top_level File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1_n.v
+    Info (12023): Found entity 1: mux2x1_n File: D:/Coding/Verilog/LabDig/Projeto/Quartus/mux2x1_n.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file mux2x1.v
+    Info (12023): Found entity 1: mux2x1 File: D:/Coding/Verilog/LabDig/Projeto/Quartus/mux2x1.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file hexa7seg.v
+    Info (12023): Found entity 1: hexa7seg File: D:/Coding/Verilog/LabDig/Projeto/Quartus/hexa7seg.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file fluxo_dados.v
+    Info (12023): Found entity 1: fluxo_dados File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file edge_detector.v
+    Info (12023): Found entity 1: edge_detector File: D:/Coding/Verilog/LabDig/Projeto/Quartus/edge_detector.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file contador_m.v
+    Info (12023): Found entity 1: contador_m File: D:/Coding/Verilog/LabDig/Projeto/Quartus/contador_m.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file contador_163.v
+    Info (12023): Found entity 1: contador_163 File: D:/Coding/Verilog/LabDig/Projeto/Quartus/contador_163.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file comparador_85.v
+    Info (12023): Found entity 1: comparador_85 File: D:/Coding/Verilog/LabDig/Projeto/Quartus/comparador_85.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file circuito_exp6_timeout_tb.v
+    Info (12023): Found entity 1: circuito_exp6_timeout_tb File: D:/Coding/Verilog/LabDig/Projeto/Quartus/circuito_exp6_timeout_tb.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file circuito_exp6_erro_tb.v
+    Info (12023): Found entity 1: circuito_exp6_erro_tb File: D:/Coding/Verilog/LabDig/Projeto/Quartus/circuito_exp6_erro_tb.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file circuito_exp6_acerto_tb.v
+    Info (12023): Found entity 1: circuito_exp6_acerto_tb File: D:/Coding/Verilog/LabDig/Projeto/Quartus/circuito_exp6_acerto_tb.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file matrix_controller.v
+    Info (12023): Found entity 1: matrix_controller File: D:/Coding/Verilog/LabDig/Projeto/Quartus/matrix_controller.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at projeto_top_level.v(99): created implicit net for "s_zeraSM" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 99
+Warning (10236): Verilog HDL Implicit Net warning at projeto_top_level.v(100): created implicit net for "s_registraSM" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 100
+Info (12127): Elaborating entity "projeto_top_level" for the top level hierarchy
+Info (12128): Elaborating entity "fluxo_dados" for hierarchy "fluxo_dados:FD" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 120
+Info (12128): Elaborating entity "contador_163" for hierarchy "fluxo_dados:FD|contador_163:contadorJ" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 73
+Info (12128): Elaborating entity "registrador_4" for hierarchy "fluxo_dados:FD|registrador_4:registradorJ" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 81
+Info (12128): Elaborating entity "comparador_85" for hierarchy "fluxo_dados:FD|comparador_85:comparadorJ" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 93
+Info (12128): Elaborating entity "edge_detector" for hierarchy "fluxo_dados:FD|edge_detector:detector" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 100
+Info (12128): Elaborating entity "rom_16x4" for hierarchy "fluxo_dados:FD|rom_16x4:memoria0" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 117
+Info (12128): Elaborating entity "rom_16x4_v2" for hierarchy "fluxo_dados:FD|rom_16x4_v2:memoria1" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 122
+Info (12128): Elaborating entity "mux2x1_n" for hierarchy "fluxo_dados:FD|mux2x1_n:seletorMemoria" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 129
+Info (12128): Elaborating entity "contador_m" for hierarchy "fluxo_dados:FD|contador_m:contadorS" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 145
+Info (12128): Elaborating entity "mux2x1" for hierarchy "fluxo_dados:FD|mux2x1:mux" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 160
+Info (12128): Elaborating entity "contador_m" for hierarchy "fluxo_dados:FD|contador_m:timer_leds" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 185
+Info (12128): Elaborating entity "contador_m" for hierarchy "fluxo_dados:FD|contador_m:cont_timeout" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 206
+Info (12128): Elaborating entity "matrix_controller" for hierarchy "fluxo_dados:FD|matrix_controller:display_controller" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v Line: 228
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "display_buffer" into its bus
+Info (12128): Elaborating entity "contador_m" for hierarchy "fluxo_dados:FD|matrix_controller:display_controller|contador_m:col_selector" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/matrix_controller.v Line: 105
+Info (12128): Elaborating entity "unidade_controle" for hierarchy "unidade_controle:UC" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 165
+Info (12128): Elaborating entity "hexa7seg" for hierarchy "hexa7seg:display_contagem" File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 170
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "matriz_r[0]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[1]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[2]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[3]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[4]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[5]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[6]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_r[7]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[0]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[1]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[2]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[3]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[4]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[5]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[6]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_g[7]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[0]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[1]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[2]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[3]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[4]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[5]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[6]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+    Warning (13410): Pin "matriz_b[7]" is stuck at VCC File: D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 238 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 80 output pins
+    Info (21061): Implemented 146 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Mon Mar 17 00:23:09 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+

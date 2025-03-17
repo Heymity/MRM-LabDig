@@ -1,0 +1,281 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ganhou",
+					"strict" : false
+				},
+				{
+					"name" : "perdeu",
+					"strict" : false
+				},
+				{
+					"name" : "pronto",
+					"strict" : false
+				},
+				{
+					"name" : "timeout",
+					"strict" : false
+				},
+				{
+					"name" : "leds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[0]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[1]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[2]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[3]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[4]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[5]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[6]",
+					"strict" : false
+				},
+				{
+					"name" : "matriz_col[7]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db_contagem[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db_memoria[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db_estado[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db_jogadafeita[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[0]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[1]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[2]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[3]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[5]",
+					"strict" : false
+				},
+				{
+					"name" : "db_seqCont[6]",
+					"strict" : false
+				},
+				{
+					"name" : "db_igual",
+					"strict" : false
+				},
+				{
+					"name" : "db_clock",
+					"strict" : false
+				},
+				{
+					"name" : "db_iniciar",
+					"strict" : false
+				},
+				{
+					"name" : "db_tem_jogada",
+					"strict" : false
+				},
+				{
+					"name" : "db_mostra_leds",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "jogar",
+					"strict" : false
+				},
+				{
+					"name" : "botoes[0]",
+					"strict" : false
+				},
+				{
+					"name" : "botoes[1]",
+					"strict" : false
+				},
+				{
+					"name" : "botoes[2]",
+					"strict" : false
+				},
+				{
+					"name" : "botoes[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "show_display",
+					"strict" : false
+				},
+				{
+					"name" : "display_refresh_clock",
+					"strict" : false
+				},
+				{
+					"name" : "zera_display",
+					"strict" : false
+				},
+				{
+					"name" : "memoria",
+					"strict" : false
+				},
+				{
+					"name" : "dificuldade",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
