@@ -72,21 +72,21 @@ module matrix_controller (
 			display_buffer[2][2] <= 8'b11111111 & (~line_block_mask);
 			
 			display_buffer[3][0] <= 8'b11111111;
-			display_buffer[3][1] <= (jogadas[1] | line_block_mask) & (~line_block_mask);;
+			display_buffer[3][1] <= (jogadas[1] | line_block_mask) & (~line_block_mask);
 			display_buffer[3][2] <= 8'b11111111 & (~line_block_mask);
 			
 			display_buffer[4][0] <= 8'b11111111;
 			display_buffer[4][1] <= 8'b11111111 & (~line_block_mask);
-			display_buffer[4][2] <= (jogadas[2] | line_block_mask) & (~line_block_mask);;
+			display_buffer[4][2] <= (jogadas[2] | line_block_mask) & (~line_block_mask);
 			
 			display_buffer[5][0] <= jogadas[3] | line_block_mask;
-			display_buffer[5][1] <= (jogadas[3] | line_block_mask) & (~line_block_mask);;
+			display_buffer[5][1] <= (jogadas[3] | line_block_mask) & (~line_block_mask);
 			display_buffer[5][2] <= 8'b11111111 & (~line_block_mask);
 			
 			
 			
-			{display_buffer[7][0], display_buffer[6][0], display_buffer[1][0], display_buffer[0][0]} <= 32'hFFFFFFFF << pontos;
-			{display_buffer[7][2], display_buffer[6][2], display_buffer[1][2], display_buffer[0][2]} <= 32'hFFFFFFFF << pontos;
+			{display_buffer[0][0], display_buffer[1][0], display_buffer[6][0], display_buffer[7][0]} <= 32'hFFFFFFFF >> pontos;
+			{display_buffer[0][2], display_buffer[1][2], display_buffer[6][2], display_buffer[7][2]} <= 32'hFFFFFFFF >> pontos;
 		
 		end
 	end
