@@ -1,0 +1,31 @@
+Quartus Prime Archive log --	D:/Coding/Verilog/LabDig/Projeto/Quartus/ProjetoT4BB6.qarlog
+
+Archive:	D:/Coding/Verilog/LabDig/Projeto/Quartus/ProjetoT4BB6.qar
+Date:		Wed Mar 19 00:16:23 2025
+Quartus Prime		20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+D:/Coding/Verilog/LabDig/Projeto/Quartus/ProjetoT4BB6.qpf
+D:/Coding/Verilog/LabDig/Projeto/Quartus/ProjetoT4BB6.qsf
+D:/Coding/Verilog/LabDig/Projeto/Quartus/circuito_exp6_acerto_tb.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/circuito_exp6_erro_tb.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/circuito_exp6_timeout_tb.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/comparador_85.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/contador_163.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/contador_m.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/edge_detector.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/fluxo_dados.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/hexa7seg.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/matrix_controller.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/mux2x1.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/mux2x1_n.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/projeto_top_level.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/registrador_4.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/rom16x4_v2.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/rom_16x4.v
+D:/Coding/Verilog/LabDig/Projeto/Quartus/unidade_controle.v
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 20 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -14,7 +14,6 @@ module matrix_controller (
 	
 	reg [7:0] jogadas [3:0];
 	
-	
 	wire [7:0] line_block_mask;
 	
 	assign line_block_mask = ~(8'b11111111 >> linhas_bloqueadas);
@@ -93,68 +92,87 @@ module matrix_controller (
 	
 	
 	wire [2:0] selected_col;
+	wire [1:0] output_color;
+	wire next_col;
 	
-	contador_m #(.M(8), .N(3)) col_selector (
+	contador_m #(.M(3), .N(2)) color_selector (
 		.clock(display_refresh_clock),
 		.zera_as(reset_display),
 		.zera_s(1'b0),
 		.conta(show_display),
+		.Q(output_color),
+		.fim(next_col),
+		.meio()
+	);
+	
+	contador_m #(.M(8), .N(3)) column_selector (
+		.clock(display_refresh_clock),
+		.zera_as(reset_display),
+		.zera_s(1'b0),
+		.conta(next_col),
 		.Q(selected_col),
 		.fim(),
 		.meio()
 	);
 	
+	reg [7:0] line_output_r, line_output_g, line_output_b;
+	
+	
 	always @(selected_col) begin
+		
+		matriz_r <= 8'b11111111;
+		matriz_g <= 8'b11111111;
+		matriz_b <= 8'b11111111;
+		
+		matriz_col <= 8'b00000001 << selected_col;
 	
 		case (selected_col) 
 			3'b000: begin
-				matriz_col 	<= 8'b00000001;
-				matriz_r 	<= display_buffer[0][0];
-				matriz_g 	<= display_buffer[0][1];
-				matriz_b 	<= display_buffer[0][2];
+				line_output_r 	<= display_buffer[0][0];
+				line_output_g 	<= display_buffer[0][1];
+				line_output_b 	<= display_buffer[0][2];
 			end
 			3'b001: begin
-				matriz_col 	<= 8'b00000010;
-				matriz_r 	<= display_buffer[1][0];
-				matriz_g 	<= display_buffer[1][1];
-				matriz_b 	<= display_buffer[1][2];
+				line_output_r 	<= display_buffer[1][0];
+				line_output_g 	<= display_buffer[1][1];
+				line_output_b 	<= display_buffer[1][2];
 			end
 			3'b010: begin
-				matriz_col 	<= 8'b00000100;
-				matriz_r 	<= display_buffer[2][0];
-				matriz_g 	<= display_buffer[2][1];
-				matriz_b 	<= display_buffer[2][2];
+				line_output_r	<= display_buffer[2][0];
+				line_output_g	<= display_buffer[2][1];
+				line_output_b	<= display_buffer[2][2];
 			end
 			3'b011: begin
-				matriz_col 	<= 8'b00001000;
-				matriz_r 	<= display_buffer[3][0];
-				matriz_g 	<= display_buffer[3][1];
-				matriz_b 	<= display_buffer[3][2];
+				line_output_r	<= display_buffer[3][0];
+				line_output_g	<= display_buffer[3][1];
+				line_output_b	<= display_buffer[3][2];
 			end
 			3'b100: begin
-				matriz_col 	<= 8'b00010000;
-				matriz_r 	<= display_buffer[4][0];
-				matriz_g 	<= display_buffer[4][1];
-				matriz_b 	<= display_buffer[4][2];
+				line_output_r 	<= display_buffer[4][0];
+				line_output_g 	<= display_buffer[4][1];
+				line_output_b 	<= display_buffer[4][2];
 			end
 			3'b101: begin
-				matriz_col 	<= 8'b00100000;
-				matriz_r 	<= display_buffer[5][0];
-				matriz_g 	<= display_buffer[5][1];
-				matriz_b 	<= display_buffer[5][2];
+				line_output_r	<= display_buffer[5][0];
+				line_output_g	<= display_buffer[5][1];
+				line_output_b	<= display_buffer[5][2];
 			end
 			3'b110: begin
-				matriz_col 	<= 8'b01000000;
-				matriz_r 	<= display_buffer[6][0];
-				matriz_g 	<= display_buffer[6][1];
-				matriz_b 	<= display_buffer[6][2];
+				line_output_r 	<= display_buffer[6][0];
+				line_output_g 	<= display_buffer[6][1];
+				line_output_b 	<= display_buffer[6][2];
 			end
 			3'b111: begin
-				matriz_col 	<= 8'b10000000;
-				matriz_r 	<= display_buffer[7][0];
-				matriz_g 	<= display_buffer[7][1];
-				matriz_b 	<= display_buffer[7][2];
+				line_output_r 	<= display_buffer[7][0];
+				line_output_g 	<= display_buffer[7][1];
+				line_output_b 	<= display_buffer[7][2];
 			end
+		endcase
+		
+		case (output_color)
+			2'b00: matriz_r <= line_output_r;
+			2'b01: matriz_g <= line_output_g;
+			2'b10: matriz_b <= line_output_b;
 		endcase
 	
 	end

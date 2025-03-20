@@ -4,38 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ganhou",
-					"strict" : false
-				},
-				{
-					"name" : "perdeu",
-					"strict" : false
-				},
-				{
-					"name" : "pronto",
-					"strict" : false
-				},
-				{
-					"name" : "timeout",
-					"strict" : false
-				},
-				{
-					"name" : "leds[0]",
-					"strict" : false
-				},
-				{
-					"name" : "leds[1]",
-					"strict" : false
-				},
-				{
-					"name" : "leds[2]",
-					"strict" : false
-				},
-				{
-					"name" : "leds[3]",
-					"strict" : false
-				},
-				{
 					"name" : "matriz_col[0]",
 					"strict" : false
 				},
@@ -68,195 +36,99 @@
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[0]",
+					"name" : "matriz_r[0]",
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[1]",
+					"name" : "matriz_r[1]",
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[2]",
+					"name" : "matriz_r[2]",
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[3]",
+					"name" : "matriz_r[3]",
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[4]",
+					"name" : "matriz_r[4]",
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[5]",
+					"name" : "matriz_r[5]",
 					"strict" : false
 				},
 				{
-					"name" : "db_contagem[6]",
+					"name" : "matriz_r[6]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[0]",
+					"name" : "matriz_r[7]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[1]",
+					"name" : "matriz_g[0]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[2]",
+					"name" : "matriz_g[1]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[3]",
+					"name" : "matriz_g[2]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[4]",
+					"name" : "matriz_g[3]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[5]",
+					"name" : "matriz_g[4]",
 					"strict" : false
 				},
 				{
-					"name" : "db_memoria[6]",
+					"name" : "matriz_g[5]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[0]",
+					"name" : "matriz_g[6]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[1]",
+					"name" : "matriz_g[7]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[2]",
+					"name" : "matriz_b[0]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[3]",
+					"name" : "matriz_b[1]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[4]",
+					"name" : "matriz_b[2]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[5]",
+					"name" : "matriz_b[3]",
 					"strict" : false
 				},
 				{
-					"name" : "db_estado[6]",
+					"name" : "matriz_b[4]",
 					"strict" : false
 				},
 				{
-					"name" : "db_jogadafeita[0]",
+					"name" : "matriz_b[5]",
 					"strict" : false
 				},
 				{
-					"name" : "db_jogadafeita[1]",
+					"name" : "matriz_b[6]",
 					"strict" : false
 				},
 				{
-					"name" : "db_jogadafeita[2]",
-					"strict" : false
-				},
-				{
-					"name" : "db_jogadafeita[3]",
-					"strict" : false
-				},
-				{
-					"name" : "db_jogadafeita[4]",
-					"strict" : false
-				},
-				{
-					"name" : "db_jogadafeita[5]",
-					"strict" : false
-				},
-				{
-					"name" : "db_jogadafeita[6]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[0]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[1]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[2]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[3]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[4]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[5]",
-					"strict" : false
-				},
-				{
-					"name" : "db_seqCont[6]",
-					"strict" : false
-				},
-				{
-					"name" : "db_igual",
-					"strict" : false
-				},
-				{
-					"name" : "db_clock",
-					"strict" : false
-				},
-				{
-					"name" : "db_iniciar",
-					"strict" : false
-				},
-				{
-					"name" : "db_tem_jogada",
-					"strict" : false
-				},
-				{
-					"name" : "db_mostra_leds",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
-					"name" : "jogar",
-					"strict" : false
-				},
-				{
-					"name" : "botoes[0]",
-					"strict" : false
-				},
-				{
-					"name" : "botoes[1]",
-					"strict" : false
-				},
-				{
-					"name" : "botoes[2]",
-					"strict" : false
-				},
-				{
-					"name" : "botoes[3]",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
-					"name" : "show_display",
+					"name" : "matriz_b[7]",
 					"strict" : false
 				},
 				{
@@ -264,15 +136,71 @@
 					"strict" : false
 				},
 				{
-					"name" : "zera_display",
+					"name" : "reset_display",
 					"strict" : false
 				},
 				{
-					"name" : "memoria",
+					"name" : "pontos[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dificuldade",
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "pontos[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pontos[3]",
+					"strict" : false
+				},
+				{
+					"name" : "show_display",
+					"strict" : false
+				},
+				{
+					"name" : "pontos[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pontos[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pontos[1]",
+					"strict" : false
+				},
+				{
+					"name" : "linhas_bloqueadas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "linhas_bloqueadas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "linhas_bloqueadas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "prox_jogada[0]",
+					"strict" : false
+				},
+				{
+					"name" : "desce_jogada",
+					"strict" : false
+				},
+				{
+					"name" : "prox_jogada[3]",
+					"strict" : false
+				},
+				{
+					"name" : "prox_jogada[1]",
+					"strict" : false
+				},
+				{
+					"name" : "prox_jogada[2]",
 					"strict" : false
 				}
 			]

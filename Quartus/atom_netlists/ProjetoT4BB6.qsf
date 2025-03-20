@@ -1,0 +1,85 @@
+set_location_assignment PIN_H15 -to matriz_r[0]
+set_location_assignment PIN_A13 -to matriz_r[1]
+set_location_assignment PIN_C13 -to matriz_r[2]
+set_location_assignment PIN_G18 -to matriz_r[3]
+set_location_assignment PIN_H18 -to matriz_r[4]
+set_location_assignment PIN_J19 -to matriz_r[5]
+set_location_assignment PIN_H10 -to matriz_r[6]
+set_location_assignment PIN_H14 -to matriz_r[7]
+set_location_assignment PIN_J13 -to matriz_b[0]
+set_location_assignment PIN_A14 -to matriz_b[1]
+set_location_assignment PIN_C15 -to matriz_b[2]
+set_location_assignment PIN_E15 -to matriz_b[3]
+set_location_assignment PIN_F14 -to matriz_b[4]
+set_location_assignment PIN_F13 -to matriz_b[5]
+set_location_assignment PIN_G16 -to matriz_b[6]
+set_location_assignment PIN_G13 -to matriz_b[7]
+set_location_assignment PIN_J18 -to matriz_g[0]
+set_location_assignment PIN_G11 -to matriz_g[1]
+set_location_assignment PIN_J11 -to matriz_g[2]
+set_location_assignment PIN_A15 -to matriz_g[3]
+set_location_assignment PIN_L8 -to matriz_g[4]
+set_location_assignment PIN_B15 -to matriz_g[5]
+set_location_assignment PIN_E14 -to matriz_g[6]
+set_location_assignment PIN_E16 -to matriz_g[7]
+set_location_assignment PIN_B12 -to matriz_col[0]
+set_location_assignment PIN_B13 -to matriz_col[1]
+set_location_assignment PIN_D13 -to matriz_col[2]
+set_location_assignment PIN_G17 -to matriz_col[3]
+set_location_assignment PIN_F15 -to matriz_col[4]
+set_location_assignment PIN_F12 -to matriz_col[5]
+set_location_assignment PIN_G15 -to matriz_col[6]
+set_location_assignment PIN_G12 -to matriz_col[7]
+set_location_assignment PIN_N16 -to clock
+set_location_assignment PIN_M16 -to display_refresh_clock
+set_location_assignment PIN_M21 -to desce_jogada
+set_location_assignment PIN_U13 -to linhas_bloqueadas[0]
+set_location_assignment PIN_V13 -to linhas_bloqueadas[1]
+set_location_assignment PIN_T13 -to linhas_bloqueadas[2]
+set_location_assignment PIN_D17 -to pontos[0]
+set_location_assignment PIN_K21 -to pontos[1]
+set_location_assignment PIN_M20 -to pontos[2]
+set_location_assignment PIN_N21 -to pontos[3]
+set_location_assignment PIN_R21 -to pontos[4]
+set_location_assignment PIN_N20 -to pontos[5]
+set_location_assignment PIN_B16 -to prox_jogada[0]
+set_location_assignment PIN_C16 -to prox_jogada[1]
+set_location_assignment PIN_K20 -to prox_jogada[2]
+set_location_assignment PIN_K22 -to prox_jogada[3]
+set_location_assignment PIN_U7 -to reset_display
+set_location_assignment PIN_AB12 -to show_display
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CEBA4F23C7
+set_global_assignment -name TOP_LEVEL_ENTITY matrix_controller
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:43:50  MARCH 16, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE unidade_controle.v
+set_global_assignment -name VERILOG_FILE rom_16x4.v
+set_global_assignment -name VERILOG_FILE rom16x4_v2.v
+set_global_assignment -name VERILOG_FILE registrador_4.v
+set_global_assignment -name VERILOG_FILE projeto_top_level.v
+set_global_assignment -name VERILOG_FILE mux2x1_n.v
+set_global_assignment -name VERILOG_FILE mux2x1.v
+set_global_assignment -name VERILOG_FILE hexa7seg.v
+set_global_assignment -name VERILOG_FILE fluxo_dados.v
+set_global_assignment -name VERILOG_FILE edge_detector.v
+set_global_assignment -name VERILOG_FILE contador_m.v
+set_global_assignment -name VERILOG_FILE contador_163.v
+set_global_assignment -name VERILOG_FILE comparador_85.v
+set_global_assignment -name VERILOG_FILE circuito_exp6_timeout_tb.v
+set_global_assignment -name VERILOG_FILE circuito_exp6_erro_tb.v
+set_global_assignment -name VERILOG_FILE circuito_exp6_acerto_tb.v
+set_global_assignment -name VERILOG_FILE matrix_controller.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

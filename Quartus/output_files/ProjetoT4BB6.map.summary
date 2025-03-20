@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Mar 17 22:06:55 2025
+Analysis & Synthesis Status : Successful - Wed Mar 19 21:46:12 2025
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : ProjetoT4BB6
-Top-level Entity Name : projeto_top_level
+Top-level Entity Name : matrix_controller
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 64
-Total pins : 92
+Total registers : 115
+Total pins : 50
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
