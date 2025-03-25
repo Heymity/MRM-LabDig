@@ -38,7 +38,7 @@ input enable,
 output reg AEB
 );
 
-always @(A) begin
+always @(A or B) begin
     if (enable) begin
         if (A == B) begin
             AEB <= 1;

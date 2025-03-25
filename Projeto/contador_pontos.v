@@ -38,19 +38,19 @@ end
 always @ (pontos) begin
     if (pontos == 0) begin
         linhas_bloq = 0;
-    end else if (pontos == 4 || pontos == 7) begin
+    end else if (pontos >= 4 && pontos <= 7) begin
         linhas_bloq = 1;
-    end else if (pontos == 8 || pontos == 11) begin
+    end else if (pontos >= 8 && pontos <= 11) begin
         linhas_bloq = 2;
-    end else if (pontos == 12 || pontos == 15) begin
+    end else if (pontos >= 12 && pontos <= 15) begin
         linhas_bloq = 3;
-    end else if (pontos == 16 || pontos == 19) begin
+    end else if (pontos >= 16 && pontos <= 19) begin
         linhas_bloq = 4;
-    end else if (pontos == 20 || pontos == 23) begin
+    end else if (pontos >= 20 && pontos <= 23) begin
         linhas_bloq = 5;
-    end else if (pontos == 24 || pontos == 27) begin
+    end else if (pontos >= 24 && pontos <= 27) begin
         linhas_bloq = 6;
-    end else if (pontos == 28) begin
+    end else if (pontos >= 28) begin
         linhas_bloq = 7;
     end
 end
