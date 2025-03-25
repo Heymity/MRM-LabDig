@@ -6,6 +6,7 @@ module matrix_controller (
 	input	[3:0] prox_jogada,
 	
 	output reg [7:0] matriz_col, matriz_r, matriz_g, matriz_b
+
 );
 
 	//  LINHAS					COLUNA RGB	**ATIVO BAIXO**
@@ -175,5 +176,7 @@ module matrix_controller (
 		endcase
 	
 	end
+
+	
 
 endmodule
