@@ -1,6 +1,6 @@
 module mux2x1 (
-    input reg [3:0] D0,
-    input reg [3:0] D1,
+    input [3:0] D0,
+    input [3:0] D1,
     input      SEL,
     output reg [3:0] OUT
 );

@@ -2,7 +2,7 @@
 
 module random_number (
     input gerar,
-    input reg [1:0] seed,
+    input [1:0] seed,
     output reg [3:0] numero
 );
 
